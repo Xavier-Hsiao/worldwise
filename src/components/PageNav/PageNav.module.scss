@@ -1,5 +1,36 @@
+@use "../../styles/theme.scss";
+
 .nav {
   display: flex;
   justify-content: space-between;
-  list-style: none;
+  align-items: center;
+  
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    list-style: none;
+  }
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: theme.$light-2;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  // the active class is given by react router Link so we have to use global in css module
+  a:global(.active) {
+    color: theme.$brand-2;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    background-color: theme.$brand-2;
+    color: theme.$dark-0;
+    padding: 0.8rem 2rem;
+    border-radius: 7px;
+  }
 }

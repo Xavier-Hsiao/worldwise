@@ -1,10 +1,29 @@
+// Using the same sass file as Product
 import PageNav from "../components/PageNav/PageNav";
+import styles from "./Product/Product.module.scss";
 
-export default function Pricing() {
+export default function Product() {
   return (
-    <>
+    <main className={styles.product}>
       <PageNav />
-      <h1>Pricing</h1>
-    </>
+      <section>
+        <div>
+          <h2>
+            Simple pricing.
+            <br />
+            Just $9/month.
+          </h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
+            labore mollitia iusto. Recusandae quos provident, laboriosam fugit
+            voluptatem iste.
+          </p>
+        </div>
+        <img
+          src="src\assets\img-2.jpg"
+          alt="overview of a large city with skyscrapers"
+        />
+      </section>
+    </main>
   );
 }
