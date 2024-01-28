@@ -1,0 +1,10 @@
+@use "../../styles/theme.scss";
+
+.footer {
+  margin-top: auto;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  color: theme.$light-1;
+}

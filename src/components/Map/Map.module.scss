@@ -1,0 +1,8 @@
+@use "../../styles/theme.scss";
+
+.mapContainer {
+  flex: 1;
+  height: 100%;
+  background-color: theme.$dark-2;
+  position: relative;
+}

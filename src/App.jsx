@@ -3,7 +3,7 @@ import style from "./App.module.scss";
 import Product from "./pages/Product/Product";
 import Homepage from "./pages/Homepage/Homepage";
 import Pricing from "./pages/Pricing";
-import AppLayout from "./pages/AppLayout";
+import AppLayout from "./pages/AppLayout/AppLayout";
 import Login from "./pages/Login/Login";
 
 function App() {
