@@ -1,0 +1,30 @@
+@use "../../styles/theme.scss";
+
+.nav {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  ul {
+    list-style: none;
+    display: flex;
+    background-color: theme.$dark-2;
+    border-radius: 7px;
+  }
+
+  a:link,
+  a:visited {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+  }
+
+  // the active class is given by react router Link so we have to use global in css module
+  a:global(.active) {
+    background-color: theme.$dark-0;
+  }
+}
