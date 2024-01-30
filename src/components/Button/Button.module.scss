@@ -1,0 +1,26 @@
+@use "../../styles/theme.scss";
+
+.btn {
+  color: inherit;
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+// Button type: primary
+.primary {
+  font-weight: 700;
+  background-color: theme.$brand-2;
+  color: theme.$dark-1;
+}
+
+// Button type: back
+.back {
+  font-weight: 600;
+  background: none;
+  border: 1px solid currentColor;
+}
