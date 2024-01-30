@@ -13,9 +13,8 @@ export default function CountryList({ cities, isLoading }) {
     );
   }
 
-  /**
-   * @param {Array.<{country: String, emoji: String}>} country
-   */
+
+  // Use map method to flatten accumulator to get country for every item
   const countries = cities.reduce((accumulator, currentCity) => {
     // Filter our the duplicated country
     if (

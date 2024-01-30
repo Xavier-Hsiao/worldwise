@@ -8,6 +8,8 @@
   background-color: theme.$dark-2;
   border-radius: 7px;
   border-left: 5px solid theme.$brand-2;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
 
   &--active {
