@@ -2,8 +2,10 @@ import styles from "./CityList.module.scss";
 import Spinner from "../Spinner/Spinner";
 import CityItem from "../CityItem/CityItem";
 import Message from "../Message/Message";
+import useCityContext from "../../hooks/useCityContext";
 
-export default function CityList({ cities, isLoading }) {
+export default function CityList() {
+  const { cities, isLoading } = useCityContext();
 
   if (isLoading) return <Spinner />;
 
@@ -21,8 +23,6 @@ export default function CityList({ cities, isLoading }) {
           <CityItem city={city} key={city.id} />
         ))}
       </ul>
-
-      
     </>
   );
 }
