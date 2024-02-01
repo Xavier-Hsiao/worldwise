@@ -1,14 +1,12 @@
 import styles from "./Form.module.scss";
 import Button from "../Button/Button";
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import ButtonBack from "../ButtonBack/ButtonBack";
 
 export default function Form() {
   const [cityName, setCityName] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
-
-  const navigate = useNavigate();
 
   return (
     <form className={styles.form}>
@@ -43,16 +41,7 @@ export default function Form() {
         <Button type="primary" className={styles.btn}>
           Add
         </Button>
-        <Button
-          type="back"
-          className={styles.btn}
-          onClick={(event) => {
-            event.preventDefault();
-            navigate(-1);
-          }}
-        >
-          &larr; Back
-        </Button>
+        <ButtonBack />
       </div>
     </form>
   );
