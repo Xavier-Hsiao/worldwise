@@ -1,0 +1,42 @@
+@use "../../styles/theme.scss";
+
+.city {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-height: 70%;
+  padding: 2rem 3rem;
+  border-radius: 7px;
+  background-color: theme.$dark-2;
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h6 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: theme.$light-1;
+  }
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.9rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  a:link,
+  a:visited {
+    font-size: 1.6rem;
+    color: theme.$brand-1;
+  }
+}
