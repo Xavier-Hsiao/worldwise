@@ -3,6 +3,7 @@ import useCity from "../../hooks/useCityContext";
 import { useEffect } from "react";
 import styles from "./City.module.scss";
 import Button from "../Button/Button";
+import Spinner from "../Spinner/Spinner";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -14,13 +15,16 @@ const formatDate = (date) =>
 
 export default function City() {
   const { id } = useParams();
-  const { getCity, currentCity } = useCity();
+  const { getCity, currentCity, isLoading } = useCity();
   const { cityName, notes, date, emoji } = currentCity;
 
   // Handle side effect: fetch data of city that user selected
   useEffect(() => {
     getCity(id);
   }, [id]);
+
+  // Show loading spinner during currentCity changing
+  if (isLoading) return <Spinner />;
 
   return (
     <div className={styles.city}>
