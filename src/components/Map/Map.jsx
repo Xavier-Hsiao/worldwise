@@ -30,7 +30,13 @@ export default function Map() {
             position={[city.position.lat, city.position.lng]}
             key={city.id}
           >
-            <Popup>{city.notes ? city.notes : null}</Popup>
+            <Popup>
+              <span>
+                {city.emoji}
+                {city.name}
+              </span>
+              <span>{city.notes ? city.notes : null}</span>
+            </Popup>
           </Marker>
         ))}
       </MapContainer>
