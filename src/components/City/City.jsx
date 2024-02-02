@@ -2,7 +2,6 @@ import { useParams } from "react-router";
 import useCity from "../../hooks/useCityContext";
 import { useEffect } from "react";
 import styles from "./City.module.scss";
-import Button from "../Button/Button";
 import Spinner from "../Spinner/Spinner";
 import ButtonBack from "../ButtonBack/ButtonBack";
 
