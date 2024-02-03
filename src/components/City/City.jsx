@@ -26,13 +26,13 @@ export default function City() {
   // Show loading spinner during currentCity changing
   if (isLoading) return <Spinner />;
 
+  console.log(cityName)
+  console.log(date)
   return (
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
-        <h3>
-          <span>{emoji}</span> {cityName}
-        </h3>
+        <h3>{cityName}</h3>
       </div>
       <div className={styles.row}>
         <h6>You went to {cityName} on</h6>

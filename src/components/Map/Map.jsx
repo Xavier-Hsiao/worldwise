@@ -6,7 +6,6 @@ import {
   Marker,
   Popup,
   useMap,
-  useMapEvent,
   useMapEvents,
 } from "react-leaflet";
 import styles from "./Map.module.scss";
