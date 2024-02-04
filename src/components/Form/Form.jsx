@@ -49,6 +49,10 @@ export default function Form() {
 
   if (isLoadingGeocoding) return <Spinner />;
 
+  // Prevent users going to Form via URL without giving lat and lng
+  if (!lat && !lng)
+    return <Message message="Start by clicking somewhere on the map" />;
+
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
