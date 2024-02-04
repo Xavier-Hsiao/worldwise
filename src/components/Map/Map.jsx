@@ -10,14 +10,12 @@ import {
 } from "react-leaflet";
 import styles from "./Map.module.scss";
 import { useEffect, useState } from "react";
-import useCity from "../../hooks/useCityContext";
+import useCity from "../../contexts/useCityContext";
 import useGeolocation from "../../hooks/useGeolocation";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
 import Button from "../Button/Button";
 
 export default function Map() {
-  const [searchParams] = useSearchParams();
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
   const [mapPosition, setMapPosition] = useState([25.105497, 121.597366]);
   const { cities } = useCity();
   const {
@@ -25,6 +23,7 @@ export default function Map() {
     position: geoPosition,
     getGeolocation,
   } = useGeolocation();
+  const { lat: mapLat, lng: mapLng } = useUrlPosition();
 
   // Handle side effect: synchronize mapPosition state with mapLat and mapLng
   useEffect(() => {

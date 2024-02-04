@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import useCity from "../../hooks/useCityContext";
+import useCity from "../../contexts/useCityContext";
 import { useEffect } from "react";
 import styles from "./City.module.scss";
 import Spinner from "../Spinner/Spinner";
@@ -26,8 +26,8 @@ export default function City() {
   // Show loading spinner during currentCity changing
   if (isLoading) return <Spinner />;
 
-  console.log(cityName)
-  console.log(date)
+  console.log(cityName);
+  console.log(date);
   return (
     <div className={styles.city}>
       <div className={styles.row}>
