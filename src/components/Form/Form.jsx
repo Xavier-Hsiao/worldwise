@@ -7,7 +7,7 @@ import ButtonBack from "../ButtonBack/ButtonBack";
 import Message from "../Message/Message";
 import Spinner from "../Spinner/Spinner";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
-import "../../../public/convertToEmoji";
+import convertToEmoji from "../../../public/convertToEmoji";
 
 export default function Form() {
   const [cityName, setCityName] = useState("");
@@ -16,6 +16,7 @@ export default function Form() {
   const [notes, setNotes] = useState("");
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [geocodingError, setGeocodingError] = useState("");
+  const [emoji, setEmoji] = useState("");
 
   const { lat, lng } = useUrlPosition();
 
@@ -36,6 +37,7 @@ export default function Form() {
 
         setCityName(data.city || data.locality || "");
         setCountryName(data.countryName);
+        setEmoji(convertToEmoji(data.countryCode));
       } catch (err) {
         setGeocodingError(err.message);
       } finally {
@@ -58,6 +60,7 @@ export default function Form() {
           onChange={(e) => setCityName(e.target.value)}
           value={cityName}
         />
+        <span className={styles.flag}>{emoji}</span>
       </div>
 
       <div className={styles.row}>
