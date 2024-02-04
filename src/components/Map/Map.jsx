@@ -88,7 +88,10 @@ function DetectClick() {
     click: (event) => {
       {
         // Pass the lat and lng to URL when clicking on the Map
-        navigate(`form?lat=${event.latlng.lat}&lng=${event.latlng.lng}`);
+        navigate(`form?lat=${event.latlng.lat}&lng=${event.latlng.lng}`, {
+          // Prevent consecutive map clicks from stacking up in the navigation history
+          replace: true,
+        });
       }
     },
   });
