@@ -7,6 +7,7 @@ import ButtonBack from "../ButtonBack/ButtonBack";
 import Message from "../Message/Message";
 import Spinner from "../Spinner/Spinner";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
+import "../../../public/convertToEmoji";
 
 export default function Form() {
   const [cityName, setCityName] = useState("");
