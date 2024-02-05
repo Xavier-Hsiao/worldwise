@@ -37,18 +37,6 @@
       "id": "98443197"
     },
     {
-      "id": "1cc0",
-      "cityName": "Wandan",
-      "country": "Taiwan (Province of China)",
-      "emoji": "🇹🇼",
-      "date": "2024-02-05T13:58:26.560Z",
-      "notes": "hey!",
-      "position": {
-        "lat": "22.602026403005503",
-        "lng": "120.48048134762186"
-      }
-    },
-    {
       "id": "db3d",
       "cityName": "Tainan",
       "country": "Taiwan (Province of China)",
@@ -58,30 +46,6 @@
       "position": {
         "lat": "23.024194357319377",
         "lng": "120.24536132812501"
-      }
-    },
-    {
-      "id": "f897",
-      "cityName": "Kazuno",
-      "country": "Japan",
-      "emoji": "🇯🇵",
-      "date": "2024-02-05T14:14:50.508Z",
-      "notes": "",
-      "position": {
-        "lat": "40.24405302598069",
-        "lng": "140.77487722324386"
-      }
-    },
-    {
-      "id": "9937",
-      "cityName": "Kazuno",
-      "country": "Japan",
-      "emoji": "🇯🇵",
-      "date": "2024-02-05T14:17:21.513Z",
-      "notes": "",
-      "position": {
-        "lat": "40.24405302598069",
-        "lng": "140.77487722324386"
       }
     },
     {

@@ -55,7 +55,22 @@ function CityContextProvider({ children }) {
         },
       });
       const data = await res.json();
-      setCities((city) => [...city, data]);
+      setCities((cities) => [...cities, data]);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  // Delete a city via ID
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
     } catch (err) {
       console.log(err);
     } finally {
@@ -66,7 +81,14 @@ function CityContextProvider({ children }) {
   // STEP3: RETURN CONTEXT PROVIDER
   return (
     <CityContext.Provider
-      value={{ cities, isLoading, getCity, currentCity, createCity }}
+      value={{
+        cities,
+        isLoading,
+        getCity,
+        currentCity,
+        createCity,
+        deleteCity,
+      }}
     >
       {children}
     </CityContext.Provider>
