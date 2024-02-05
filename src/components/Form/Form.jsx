@@ -7,10 +7,12 @@ import ButtonBack from "../ButtonBack/ButtonBack";
 import Message from "../Message/Message";
 import Spinner from "../Spinner/Spinner";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
+import useCity from "../../contexts/useCityContext";
 import convertToEmoji from "../../../public/convertToEmoji";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Form() {
   const [cityName, setCityName] = useState("");
@@ -22,8 +24,33 @@ export default function Form() {
   const [emoji, setEmoji] = useState("");
 
   const { lat, lng } = useUrlPosition();
+  const { createCity, isLoading } = useCity();
+  const navigate = useNavigate();
 
   const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+
+  async function handleClick(event) {
+    event.preventDefault();
+
+    if (!cityName || !date) return;
+
+    // Add new city object
+    const newCity = {
+      cityName,
+      country: countryName,
+      emoji,
+      date,
+      notes,
+      position: {
+        lat,
+        lng,
+      },
+    };
+
+    // Use await keyword to prevent navigate executing right over
+    await createCity(newCity);
+    navigate("/app/cities");
+  }
 
   useEffect(() => {
     async function fetchCity() {
@@ -59,7 +86,7 @@ export default function Form() {
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form}>
+    <form className={`${styles.form} ${isLoading ? styles.loading : null}`}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -90,7 +117,7 @@ export default function Form() {
       </div>
 
       <div className={styles.buttons}>
-        <Button type="primary" className={styles.btn}>
+        <Button type="primary" className={styles.btn} onClick={handleClick}>
           Add
         </Button>
         <ButtonBack />

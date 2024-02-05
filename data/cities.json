@@ -10,7 +10,7 @@
         "lat": 25.105497,
         "lng": 121.597366
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Thailand",
@@ -22,7 +22,7 @@
         "lat": 13.736717,
         "lng": 100.523186
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Kyoto",
@@ -34,7 +34,91 @@
         "lat": 35.011665,
         "lng": 135.768326
       },
-      "id": 98443197
+      "id": "98443197"
+    },
+    {
+      "id": "1cc0",
+      "cityName": "Wandan",
+      "country": "Taiwan (Province of China)",
+      "emoji": "🇹🇼",
+      "date": "2024-02-05T13:58:26.560Z",
+      "notes": "hey!",
+      "position": {
+        "lat": "22.602026403005503",
+        "lng": "120.48048134762186"
+      }
+    },
+    {
+      "id": "db3d",
+      "cityName": "Tainan",
+      "country": "Taiwan (Province of China)",
+      "emoji": "🇹🇼",
+      "date": "2024-02-05T14:03:30.790Z",
+      "notes": "牛肉湯好喝",
+      "position": {
+        "lat": "23.024194357319377",
+        "lng": "120.24536132812501"
+      }
+    },
+    {
+      "id": "f897",
+      "cityName": "Kazuno",
+      "country": "Japan",
+      "emoji": "🇯🇵",
+      "date": "2024-02-05T14:14:50.508Z",
+      "notes": "",
+      "position": {
+        "lat": "40.24405302598069",
+        "lng": "140.77487722324386"
+      }
+    },
+    {
+      "id": "9937",
+      "cityName": "Kazuno",
+      "country": "Japan",
+      "emoji": "🇯🇵",
+      "date": "2024-02-05T14:17:21.513Z",
+      "notes": "",
+      "position": {
+        "lat": "40.24405302598069",
+        "lng": "140.77487722324386"
+      }
+    },
+    {
+      "id": "b533",
+      "cityName": "George Town",
+      "country": "Malaysia",
+      "emoji": "🇲🇾",
+      "date": "2024-02-05T14:19:48.077Z",
+      "notes": "Chill vibe~",
+      "position": {
+        "lat": "5.410952038168519",
+        "lng": "100.3173196758934"
+      }
+    },
+    {
+      "id": "6871",
+      "cityName": "Kuala Lumpur",
+      "country": "Malaysia",
+      "emoji": "🇲🇾",
+      "date": "2024-02-05T14:20:25.084Z",
+      "notes": "Not a big fan of this city...",
+      "position": {
+        "lat": "3.158386417918714",
+        "lng": "101.71797078546841"
+      }
+    },
+    {
+      "id": "8779",
+      "cityName": "Avignon",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-02-05T14:22:11.420Z",
+      "notes": "Nice",
+      "position": {
+        "lat": "43.94560584930294",
+        "lng": "4.827671030670798"
+      }
     }
   ]
 }

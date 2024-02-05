@@ -42,9 +42,32 @@ function CityContextProvider({ children }) {
     }
   }
 
+  // Create a new city by sending POST request
+  // New city parameter should be an object
+  async function createCity(newCity) {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${BASE_URL}/cities`, {
+        method: "POST",
+        body: JSON.stringify(newCity),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setCities((city) => [...city, data]);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   // STEP3: RETURN CONTEXT PROVIDER
   return (
-    <CityContext.Provider value={{ cities, isLoading, getCity, currentCity }}>
+    <CityContext.Provider
+      value={{ cities, isLoading, getCity, currentCity, createCity }}
+    >
       {children}
     </CityContext.Provider>
   );

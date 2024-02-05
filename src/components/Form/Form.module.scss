@@ -28,4 +28,20 @@
     font-size: 2.8rem;
     color: theme.$dark-2;
   }
+
+  .loading {
+    opacity: 0.3;
+
+    button {
+      pointer-events: none;
+      background-color: theme.$light-1;
+      border: 1px solid theme.$light-1;
+      color: theme.$dark-0;
+    }
+  }
+
+  :global(.react-datepicker) {
+    font-family: inherit;
+    font-size: 1.2rem;
+  }
 }
