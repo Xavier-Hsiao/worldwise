@@ -9,6 +9,9 @@ import Spinner from "../Spinner/Spinner";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
 import convertToEmoji from "../../../public/convertToEmoji";
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 export default function Form() {
   const [cityName, setCityName] = useState("");
   const [countryName, setCountryName] = useState("");
@@ -69,10 +72,11 @@ export default function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+        <DatePicker
           id="date"
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
+          selected={date}
+          onChange={(date) => setDate(date)}
+          dateFormat="dd/MM/yyyy"
         />
       </div>
 
