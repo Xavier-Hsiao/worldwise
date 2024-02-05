@@ -4,14 +4,7 @@ import { useEffect } from "react";
 import styles from "./City.module.scss";
 import Spinner from "../Spinner/Spinner";
 import ButtonBack from "../ButtonBack/ButtonBack";
-
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
-  }).format(new Date(date));
+import formatDate from "../../../public/formatDate";
 
 export default function City() {
   const { id } = useParams();
@@ -26,8 +19,6 @@ export default function City() {
   // Show loading spinner during currentCity changing
   if (isLoading) return <Spinner />;
 
-  console.log(cityName);
-  console.log(date);
   return (
     <div className={styles.city}>
       <div className={styles.row}>

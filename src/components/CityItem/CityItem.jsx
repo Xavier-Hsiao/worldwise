@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.scss";
 import useCity from "../../contexts/useCityContext";
-
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("tw", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date));
+import formatDate from "../../../public/formatDate";
 
 export default function CityItem({ city }) {
   const { cityName, emoji, date, id, position } = city;
