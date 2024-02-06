@@ -23,7 +23,9 @@ export default function City() {
     <div className={styles.city}>
       <div className={styles.row}>
         <h6>City name</h6>
-        <h3>{cityName}</h3>
+        <h3>
+          {cityName} {emoji}
+        </h3>
       </div>
       <div className={styles.row}>
         <h6>You went to {cityName} on</h6>
