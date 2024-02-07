@@ -9,26 +9,29 @@ import City from "./components/City/City";
 import Form from "./components/Form/Form";
 import CountryList from "./components/CountryList/CountryList";
 import { CityContextProvider } from "./contexts/CityContext";
+import { AuthProvider } from "./contexts/FakeAuthContext";
 
 function App() {
   return (
-    <CityContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Homepage />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="app" element={<AppLayout />}>
-            <Route index element={<CityList />} />
-            <Route path="cities" element={<CityList />} />
-            <Route path="cities/:id" element={<City />} />
-            <Route path="countries" element={<CountryList />} />
-            <Route path="form" element={<Form />} />
-          </Route>
-          <Route path="product" element={<Product />} />
-          <Route path="login" element={<Login />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </CityContextProvider>
+    <AuthProvider>
+      <CityContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Homepage />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="app" element={<AppLayout />}>
+              <Route index element={<CityList />} />
+              <Route path="cities" element={<CityList />} />
+              <Route path="cities/:id" element={<City />} />
+              <Route path="countries" element={<CountryList />} />
+              <Route path="form" element={<Form />} />
+            </Route>
+            <Route path="product" element={<Product />} />
+            <Route path="login" element={<Login />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </CityContextProvider>
+    </AuthProvider>
   );
 }
 

@@ -24,8 +24,6 @@ function reducer(state, action) {
   }
 }
 
-const [{ user, isAuthenticated }, dispatch] = useReducer(reducer, initialState);
-
 const FAKE_USER = {
   name: "Jack",
   email: "jack@example.com",
@@ -33,20 +31,25 @@ const FAKE_USER = {
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
 
-function login(email, password) {
-  if (email === FAKE_USER.email && password === FAKE_USER.password) {
-    dispatch({ type: "login", payload: FAKE_USER });
-  }
-}
-
-function logout() {
-  dispatch({ type: "logout" });
-}
-
 function AuthProvider({ children }) {
+  const [{ user, isAuthenticated }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
+
+  function login(email, password) {
+    if (email === FAKE_USER.email && password === FAKE_USER.password) {
+      dispatch({ type: "login", payload: FAKE_USER });
+    }
+  }
+
+  function logout() {
+    dispatch({ type: "logout" });
+  }
+
   return (
     // For simulating real-world auth mechanism, we don't pass dispatch here
-    <AuthContext.Provider value={(login, logout, user, isAuthenticated)}>
+    <AuthContext.Provider value={{ login, logout, user, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );
