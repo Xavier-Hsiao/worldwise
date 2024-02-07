@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link to="/">
       <img
-        src="src\assets\logo.png"
+        src="\src\assets\logo.png"
         alt="WorldWise logo"
         className={styles.logo}
       />
