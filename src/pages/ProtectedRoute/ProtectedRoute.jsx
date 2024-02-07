@@ -1,0 +1,15 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/useAuth";
+import { useEffect } from "react";
+
+export default function ProtectedRoute({ children }) {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isAuthenticated) navigate("/");
+  }, [isAuthenticated, navigate]);
+
+  // Prevent the app reading User even if isAuthenticated is false
+  return isAuthenticated ? children : null;
+}
