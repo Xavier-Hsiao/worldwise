@@ -12,9 +12,10 @@ export default function City() {
   const { cityName, notes, date, emoji } = currentCity;
 
   // Handle side effect: fetch data of city that user selected
+  // Putting getCity in dependency array will cause infinite loop so we have to useCallback hook for it
   useEffect(() => {
     getCity(id);
-  }, [id]);
+  }, [id, getCity]);
 
   // Show loading spinner during currentCity changing
   if (isLoading) return <Spinner />;

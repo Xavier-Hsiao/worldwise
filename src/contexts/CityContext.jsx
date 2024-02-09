@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useReducer } from "react";
+import { useCallback } from "react";
 
 const BASE_URL = "http://localhost:9000";
 
@@ -88,22 +89,25 @@ function CityContextProvider({ children }) {
   }, []);
 
   // Get the city info that user selected
-  async function getCity(id) {
-    // id comes from URL so is a string
-    if (Number(id) === currentCity.id) return;
+  const getCity = useCallback(
+    async function getCity(id) {
+      // id comes from URL so is a string
+      if (Number(id) === currentCity.id) return;
 
-    dispatch({ type: "loading" });
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: "currentCity/loaded", payload: data });
-    } catch (err) {
-      dispatch({
-        type: "rejected",
-        payload: "There was an error fetching city data...",
-      });
-    }
-  }
+      dispatch({ type: "loading" });
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
+        dispatch({ type: "currentCity/loaded", payload: data });
+      } catch (err) {
+        dispatch({
+          type: "rejected",
+          payload: "There was an error fetching city data...",
+        });
+      }
+    },
+    [currentCity.id]
+  );
 
   // Create a new city by sending POST request
   // New city parameter should be an object
